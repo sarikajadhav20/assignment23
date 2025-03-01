@@ -12,11 +12,27 @@
             box-shadow:0 0 10px rgb(45, 43, 43);
             margin-top:40px;
         }
+        .heading{
+            text-align:center;
+        }
+        .dice{
+            height: 200px;
+            display:block;
+            margin:0 auto;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Dice Roller</h1>
+        <h1 class="heading">Dice Roller</h1>
+        <img src="dice.png" class="dice">
     </div>
+    <script>
+        const min=1;
+        const max=6;
+
+        const random=Math.floor(Math.random()*(max-min+1))+min;
+        console.log(random);
+    </script>
 </body>
 </html>
