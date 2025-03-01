@@ -3,6 +3,11 @@
 <head>
     <title>Assignment 23</title>
     <style>
+        body{
+            background-color: rgb(249, 195, 204);
+            margin:0;
+            padding:0;
+        }
         .container{
             width: 500px;
             margin:0 auto;
@@ -14,16 +19,18 @@
         }
         .heading{
             text-align:center;
+            color:palevioletred;
         }
         .dice{
-            height: 200px;
+            height: 300px;
             display:block;
             margin:0 auto;
         }
         .btn{
             display:block;
-            margin:0 auto;
+            margin:20px auto;
             padding:10px 20px;
+            font-size:40px;
             background-color:palevioletred;
             color:white;
             border:none;
@@ -35,16 +42,32 @@
 <body>
     <div class="container">
         <h1 class="heading">Dice Roller</h1>
-        <img src="dice.png" class="dice">
+        <img src="dice.png" class="dice" onclick="rollDice" id="dice-img">
 
         <button class="btn">Roll Dice</button>
     </div>
     <script>
+        function rollDice(){
         const min=1;
         const max=6;
 
         const random=Math.floor(Math.random()*(max-min+1))+min;
-        console.log(random);
+        
+        const diceImg=document.getElementById('dice-img');
+        if(random==1){
+            diceImg.src="1.png";
+        }else if(random==2){
+            diceImg.src="2.png";
+        }else if(random==3){
+            diceImg.src="3.png";
+        }else if(random==4){
+            diceImg.src="4.png";
+        }else if(random==5){
+            diceImg.src="5.png";
+        }else if(random==6){
+            diceImg.src="6.png";
+        }
+        }
     </script>
 </body>
 </html>
